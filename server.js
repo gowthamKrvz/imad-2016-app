@@ -86,7 +86,7 @@ app.get('/:articleName', function(req,res){
     //So now articleName == ArticleOne.
  res.send(createTemplate(articles[articleName]));
     //articles[articleName] == {} ArticleOne (i.e., contents of ArticleOne).
- articleName = req.parans.articleName;
+ articleName = req.params.articleName;
     //The above statement is used for extracting the value to articleName.
     });
 
