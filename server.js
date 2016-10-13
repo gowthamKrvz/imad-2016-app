@@ -82,7 +82,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:articleName', function(req,res){
+app.get('/ :articleName', function(req,res){
     //The colon is used to convert the particulalr phrase after it (i.e., articleName in this case) into variable name.
     //So now articleName == ArticleOne.
  res.send(createTemplate(articles[articleName]));
