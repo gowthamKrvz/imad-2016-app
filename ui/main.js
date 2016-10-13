@@ -2,4 +2,13 @@ console.log('Loaded!');
 
 var element = document.getElementById('text');
 element.innerHTML = 'hi this is gowtham_krvz';
-prompt('What\s your name?');
+console.log();
+var myAge = console.log(prompt('What\s your name?'));
+if(myAge === 22)
+{
+    document.write("As i suspected you are three years older than me");
+}
+else
+{
+    document.write('I\'m wrong ,and tell me your date of birth.')
+}
