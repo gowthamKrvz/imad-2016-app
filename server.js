@@ -9,19 +9,38 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var ArticleOne = {
-    title : 'Article One | gowtham_krvz',
-    heading : 'Article one',
-    date : ' Oct ,13 ,2016 | 12:36AM',
-    content : `<p>
-                    This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.
-                </p>
-            </div>
-            <div>
-                <p>
-                    This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.
-                </p>`
-    
+var articles = {
+    ArticleOne   : {
+        title : 'Article One | gowtham_krvz',
+        heading : 'Article one',
+        date : ' Oct ,13 ,2016 | 12:36AM',
+        content : 
+        `<p>
+            This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.
+        </p>
+        <p>
+            This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.
+        </p>`
+        
+    },
+    ArticleTwo   : {
+        title : 'Article Two | gowtham_krvz',
+        heading : 'Article two',
+        date : ' Oct ,22 ,2016 | 11:56PM',
+        content : 
+        `<p>
+           This is Article two serving you.
+        </p>`
+    },
+    ArticleThree : {
+        title : 'Article Three | gowtham_krvz',
+        heading : 'Article three',
+        date : ' Nov ,06 ,2016 | 05:14AM',
+        content : 
+        `<p>
+           This is Article three serving you.
+        </p>`
+    }
 };
 
 function createTemplate(data){
@@ -62,18 +81,14 @@ function createTemplate(data){
     return htmlTemplate;
 }
 
-app.get('/article-one', function(req,res){
- res.send(createTemplate(ArticleOne));
+app.get('/:articleName', function(req,res){
+    //The colon is used to convert the particulalr phrase after it (i.e., articleName in this case) into variable name.
+    //So now articleName == ArticleOne.
+ res.send(createTemplate(articles[articleName]));
+    //articles[articleName] == {} ArticleOne (i.e., contents of ArticleOne).
+ articleName = req.parans.articleName;
+    //The above statement is used for extracting the value to articleName.
     });
-
-
-app.get('/article-two', function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
