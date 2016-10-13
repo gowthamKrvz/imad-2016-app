@@ -6,9 +6,5 @@ console.log();
 var myAge = console.log(prompt('What\s your age?'));
 if(myAge === 22)
 {
-    document.write("As i suspected you are three years older than me");
-}
-else
-{
-    document.write('I\'m wrong ,and tell me your date of birth.')
+    document.write('As i suspected you are three years older than me');
 }
