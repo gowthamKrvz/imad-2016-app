@@ -2,8 +2,8 @@ body {
     text-align : center;
 }
 .link{
-    float: left;
-    width: 300px;
+     margin-top : 10px;
+     margin-left : 2px;
 }
 .boom{
     margin-top : 80px;
