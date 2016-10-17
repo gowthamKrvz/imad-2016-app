@@ -2,6 +2,7 @@ body {
     text-align : center;
 }
 .link{
+    float : left;
      margin-top : 10px;
      margin-left : 2px;
 }
