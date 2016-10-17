@@ -1,3 +1,9 @@
 body {
     text-align : center;
 }
+.link{
+    float: left;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
